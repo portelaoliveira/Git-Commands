@@ -31,6 +31,8 @@ _Uma lista dos comandos Git mais usados_
 | `git add [nome-arquivo.txt]` | Adiciona um arquivo para área de stage |
 | `git add -A` | Adiciona todos os arquivos novos ou modificados para a área de stage |
 | `git commit -m "[Mensagem de Commit]"` | Comita as alterações |
+| `git config --global core.editor 'code --wait'` | Comita as alterações usando o vs code como editor padrão |
+| `git commit -v` | | Comita as alterações usando o editor de texto que estiver definido|
 | `git rm -r [nome-arquivo.txt]` | Remove um arquivo (ou pasta) |
 
 ### Branching & Merging
@@ -49,7 +51,8 @@ _Uma lista dos comandos Git mais usados_
 | `git checkout -- [nome-arquivo.txt]` | Descarta modificações de um arquivo |
 | `git merge [nome da branch]` | Faz um merge de uma branch na branch atual |
 | `git merge [source branch] [branch alvo]` | Faz um merge de uma branch em outra branch |
-| `git stash` | Tirar o estado sujo do seu diretório de trabalho |
+| `git stash` | Tirar o estado sujo do seu diretório de trabalho e armazena no stash |
+| `git stash pop` | Aplica o último estado armazenado em stash |
 | `git stash clear` | Remove todas as entradas 'stash' |
 | `git reset --hard [ID da branche]` | Voltar versões anteriores |
 
@@ -73,5 +76,35 @@ _Uma lista dos comandos Git mais usados_
 | `git log` | Ver modificações |
 | `git reflog` | Ver alterações feitas nas branches |
 | `git log --summary` | Ver modificações (detalhadas) |
+| `git log --all --decorate --oneline --graph` | Ver modificações (estilizado) |
 | `git diff [branch original] [branch alvo]` | Visualizar alterações antes de mesclar |
 
+### Boas práticas
+
+#### Para projetos pessoais
+
+1. Criar um novo repositório no GitHub para o projeto;
+2. Na pasta do projeto criada no seu computador, executar via GitBash os seguintes comandos para enviar os arquivos para o repositório no GitHub:
+   * | `git init` |
+   * | `git add .` |
+   * | `git commit -m "[Mensagem de Commit]"` | ou | `git commit -v` |
+   * | `git branch -M main` |
+   * | `git remote add origin ssh://git@github.com/[usuario]/[nome-repositorio].git` |
+   * | `git push -u origin [nome da branch]` |
+3. Feito o passo a passo do item 2., após realizar alterações nos arquivos na pasta de projeto local, para atualizar o repositório do projeto no GitHub, basta ficar executando os comandos:
+   * | `git add .` |
+   * | `git commit -m "[Mensagem de Commit]"` |
+   * | `git push` |
+
+#### Para projetos em equipe
+
+1. Se estiver trabalhando em equipe, faça:
+   * | `git pull` | na branch principal
+   * Criar uma nova branch a partir da branch principal com o comando | `git branch [nome da branch]` |
+   * Mudar para branch que foi criada com o comando | `git checkout [nome da branch]` |
+   * Trabalhar e adicionar novas funcionalidades na nova branch que criou
+   * Finalizar o trabalho na branch temporária
+   * Mudar para branch principal com o comando | `git checkout [nome da branch]` |
+   * Dar | `git pull` | na branch
+   * Mergiar (unir) o código da branch temporária com a branch principal (depois de testar)
+   * Dar | `git push` | da branch principal
