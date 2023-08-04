@@ -31,9 +31,35 @@ _Uma lista dos comandos Git mais usados_
 | `git add [nome-arquivo.txt]` | Adiciona um arquivo para área de stage |
 | `git add -A` | Adiciona todos os arquivos novos ou modificados para a área de stage |
 | `git commit -m "[Mensagem de Commit]"` | Comita as alterações |
-| `git config --global core.editor 'code --wait'` | Comita as alterações usando o vs code como editor padrão |
 | `git commit -v` | Comita as alterações usando o editor de texto que estiver definido |
+| `git config --global core.editor 'code --wait'` | Comita as alterações usando o vs code como editor padrão |
+| `git config --global -e` | Abrir o arquivo de configuração do git |
 | `git rm -r [nome-arquivo.txt]` | Remove um arquivo (ou pasta) |
+
+### Definir o Visual Studio Code como seu difftool
+
+Se você também quiser fazer com que o Visual Studio Code vire sua ferramenta de difftool padrão, você precisa entrar no arquivo de configuração global do Git.
+
+Isso, você pode acessar através do comando `git config –global -e`, mas é necessário adicionar essas entradas (ou substituir as já existentes):
+
+```git-config
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+```
+Para mostrar a diferença entre o commit mais recente (EXEMPLO) e um commit anterior (EXEMPLO~1), digite na linha de comando:
+
+`git difftool EXEMPLO~1 EXEMPLO`
+
+#### Exemplo de uso:
+
+1. Digite no terminal `git reflog`
+2. Pega a `HEAD` ou o ID `efd8199`
+
+- Exemplo:
+  
+    `git difftool HEAD~1 HEAD` ou `git difftool 0bd0822 efd8199`
 
 ### Branching & Merging
 
