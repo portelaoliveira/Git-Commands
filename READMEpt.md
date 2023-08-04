@@ -51,6 +51,7 @@ _Uma lista dos comandos Git mais usados_
 | `git merge [source branch] [branch alvo]` | Faz um merge de uma branch em outra branch |
 | `git stash` | Tirar o estado sujo do seu diretório de trabalho |
 | `git stash clear` | Remove todas as entradas 'stash' |
+| `git reset --hard [ID da branche]` | Voltar versões anteriores |
 
 ### Sharing & Updating Projects
 
@@ -70,6 +71,7 @@ _Uma lista dos comandos Git mais usados_
 | Comando | Descrição |
 | ------- | --------- |
 | `git log` | Ver modificações |
+| `git reflog` | Ver alterações feitas nas branches |
 | `git log --summary` | Ver modificações (detalhadas) |
 | `git diff [branch original] [branch alvo]` | Visualizar alterações antes de mesclar |
 
