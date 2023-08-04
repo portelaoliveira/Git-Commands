@@ -32,7 +32,7 @@ _Uma lista dos comandos Git mais usados_
 | `git add -A` | Adiciona todos os arquivos novos ou modificados para a área de stage |
 | `git commit -m "[Mensagem de Commit]"` | Comita as alterações |
 | `git config --global core.editor 'code --wait'` | Comita as alterações usando o vs code como editor padrão |
-| `git commit -v` | | Comita as alterações usando o editor de texto que estiver definido |
+| `git commit -v` | Comita as alterações usando o editor de texto que estiver definido |
 | `git rm -r [nome-arquivo.txt]` | Remove um arquivo (ou pasta) |
 
 ### Branching & Merging
