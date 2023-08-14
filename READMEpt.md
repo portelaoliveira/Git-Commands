@@ -134,3 +134,15 @@ Para mostrar a diferença entre o commit mais recente (EXEMPLO) e um commit ante
    * Dar | `git pull` | na branch
    * Mergiar (unir) o código da branch temporária com a branch principal (depois de testar)
    * Dar | `git push` | da branch principal
+
+#### Autenticar chave SSH para o GitHub
+
+1. Digitar no terminal:
+    * | `ssh-keygen` | para gerar par de chaves rsa pública/privada
+    * | `cat ~/.ssh/id_rsa.pub` | para visualizar a chave
+    * Copiar a chave SSH para área SSH keys na parte de configurações do GitHub
+2. No GitHub:
+   * Ir em configurações
+   * SSH and GPG keys
+   * New SSH key
+   * Colar a chave SSH
